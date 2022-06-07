@@ -9,7 +9,7 @@ Vue.js で作成したスライダー
 
 # DEMO
 
-以下の URL が実装したスライダーの Web ページになります．
+以下が実装したスライダーの Web ページになります．
 
 http://musasabibyun.php.xdomain.jp/jsfw-sliders/
 
@@ -18,7 +18,7 @@ http://musasabibyun.php.xdomain.jp/jsfw-sliders/
 
 # Features
 
-jQuery と Vue.js を用いて， 同じ機能を備えたスライダーを 2 つ作成しました．
+以下の機能をもったスライダーを， ｊQuery と Vue.js を用いて 2 つ作成しました．
 
 **スライダーの機能一覧**
 - ナビゲーションボタン (前後のスライドに移動させる)
@@ -27,7 +27,7 @@ jQuery と Vue.js を用いて， 同じ機能を備えたスライダーを 2 �
 - 一時停止
 
 # Requirement
-実装時 (2022/6) のバージョン
+実装時 (2022/06 時点) のバージョン
 
 jQuery: 3.6.0
 Vue.js: 3.2.36
@@ -39,4 +39,4 @@ Qiita に実装方法についてまとめました．
 
 https://qiita.com/musasabi_byun/items/2b21598f77bf37d2c572
 
-'JavaScript Framework Slider' is Confidental.
+**'JavaScript Framework Slider'** is Confidental.
