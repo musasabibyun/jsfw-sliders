@@ -2,9 +2,8 @@
 
 **JavaScript Framework Sliders**
 
-jQuery で作成したスライダー
-
-Vue.js で作成したスライダー
+- jQuery で作成したスライダー
+- Vue.js で作成したスライダー
 
 上記 2 つのスライダーをまとめた Web サイト
 
