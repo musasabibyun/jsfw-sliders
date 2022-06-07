@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS FW Slider</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- jQuery -->
+  <div class="sec-slider jquery">
+    <h1>jQuery Slider</h1>
+    <div class="slider-wrap">
+      <div class="slides">
+        <div class="slide"><img src="https://source.unsplash.com/T-VS-7y_fAY/960x300" alt="スライド1"></div>
+        <div class="slide"><img src="https://source.unsplash.com/YKtxjGsl1BY/960x300" alt="スライド2"></div>
+        <div class="slide"><img src="https://source.unsplash.com/oZu6mNLGJrU/960x300" alt="スライド3"></div>
+        <div class="slide"><img src="https://source.unsplash.com/FoBq12oj6SY/960x300" alt="スライド4"></div>
+        <div class="slide"><img src="https://source.unsplash.com/kCes633Hh1M/960x300" alt="スライド5"></div>
+      </div>
+      <div class="slider-nav">
+        <a href="#" class="prev"></a>
+        <a href="#" class="next"></a>
+      </div>
+    </div>
+    <div class="indicator"></div>
+  </div><!-- /jQuery -->
+
+  <!-- Vue.js -->
+  <div class="sec-slider vue" id="app">
+    <h1>Vue.js Slider</h1>
+
+    <div class="slider-wrap">
+      <div class="slides" @mouseenter="stopTimer()" @mouseleave="startTimer()">
+        <transition-group name="slide-trans">
+          <div class="slide" v-show="currentIndex == id" :key="id" v-for="(img,id) in imgs">
+            <img v-bind:src="imgs[id].src" v-bind:alt="'スライド' + (id+1)">
+          </div>
+        </transition-group>
+        </div>
+      <div class="slider-nav">
+        <a href="#" class="prev" v-show="currentIndex > 0" @click="prev($event)"></a>
+        <a href="#" class="next" v-show="currentIndex < slideCount-1" @click="next($event)"></a>
+      </div>
+    </div>
+    
+    <div class="indicator">
+      <template v-for="i in slideCount" :key="i">
+        <a v-if="currentIndex == i-1" class="active" href="#" @click="jump(i-1,$event)"></a>
+        <a v-else href="#" @click="jump(i-1,$event)"></a>
+      </template>
+    </div>
+  </div><!-- /Vue.js -->
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="script.js"></script>
+</body>
+</html>

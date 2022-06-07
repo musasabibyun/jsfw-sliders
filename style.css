@@ -1,0 +1,185 @@
+/*=======================================================
+  COMMON
+========================================================*/
+ * {
+  box-sizing: border-box;
+}
+h1 {
+  margin: 50px 0;
+  text-align: center;
+}
+@media screen and (max-width: 576px) {
+  h1 {
+    margin: 25px 0;
+    font-size: 24px;
+  }
+}
+
+/*=======================================================
+  Slider
+========================================================*/
+/* スライダー本体部分 */
+.sec-slider {
+  margin-bottom: 150px;
+}
+.sec-slider .slider-wrap {
+  position: relative;
+  width: 100%;
+}
+.slider-wrap .slides {
+  position: relative;
+  width: 75%;
+    max-width: 960px;
+  margin: 0 auto 50px;
+  overflow: hidden;
+}
+.slides::before {
+  content: '';
+  display: block;
+  padding-top: 31.25%;
+}
+.slides .slide {
+  position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+.slides .slide > img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+  border: none;
+}
+
+/* ナビゲーション部分 */
+.slider-wrap .slider-nav {
+  display: block;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  width: 95%;
+    max-width: 1250px;
+  height: 100px;
+}
+.slider-nav a {
+  display: inline-block;
+  position: absolute;
+  border-right: 50px solid transparent;
+  border-bottom: 86.9px solid #333;
+  border-left: 50px solid transparent;
+}
+.slider-nav a.prev {
+  left: 0;
+  transform: rotate(-90deg);
+}
+.slider-nav a.next {
+  right: 0;
+  transform: rotate(90deg);
+}
+.slider-nav a::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+    top: 5.5px;
+    left: -46px;
+  border-right: 46px solid transparent;
+  border-bottom: 79.7px solid #D2E1F1;
+  border-left: 46px solid transparent;
+}
+.slider-nav a.disabled {
+  display: none;
+}
+
+/* インジケーター部分 */
+.sec-slider .indicator {
+  width: 50%;
+    max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.indicator a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  background-color: #D2E1F1;
+  border: 1px solid #333;
+  border-radius: 50%;
+}
+.indicator a.active{
+  background-color: #333;
+  cursor: default;
+}
+
+/* 1024px 以下 */
+@media screen and (max-width: 1024px) {
+  .slider-wrap .slides {
+    margin: 0 auto 20px;
+  }
+  .slider-wrap .slider-nav {
+    height: 50px;
+  }
+  .slider-wrap .slider-nav a {
+    border-right: 25px solid transparent;
+    border-bottom: 43.45px solid #333;
+    border-left: 25px solid transparent;
+  }
+  .slider-nav a::before {
+      top: 2.8px;
+      left: -23.6px;
+    border-right: 23px solid transparent;
+    border-bottom: 39.85px solid #D2E1F1;
+    border-left: 23px solid transparent;
+  }
+  .sec-slider .indicator a {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+  }
+}
+/* 576px 以下 */
+@media screen and (max-width: 576px) {
+  .slider-wrap .slides {
+    margin: 0 auto 12px;
+  }
+  .slider-wrap .slider-nav {
+    width: 92%;
+      max-width: 470px;
+    height: 25px;
+  }
+  .slider-wrap .slider-nav a {
+    border-right: 12.5px solid transparent;
+    border-bottom: 21.73px solid #333;
+    border-left: 12.5px solid transparent;
+  }
+  .slider-nav a::before {
+      top: 1.2px;
+      left: -11.7px;
+    border-right: 11.5px solid transparent;
+    border-bottom: 19.93px solid #D2E1F1;
+    border-left: 11.5px solid transparent;
+  }
+  .sec-slider .indicator a {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* jQuery 専用 ---------------------------------------- */
+.sec-slider.jquery .slides .slide {
+  display: none;
+}
+
+/* Vue.js 専用 ---------------------------------------- */
+.sec-slider.vue .slides .slide {
+  display: block;
+}
+.slide-trans-enter-active, .slide-trans-leave-active {
+  transition: all .4s ease-out;
+}
+.slide-trans-enter-from, .slide-trans-leave-to {
+  opacity: 0;
+}
