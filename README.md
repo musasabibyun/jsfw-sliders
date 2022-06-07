@@ -18,7 +18,7 @@ http://musasabibyun.php.xdomain.jp/jsfw-sliders/
 
 # Features
 
-以下の機能をもったスライダーを， ｊQuery と Vue.js を用いて 2 つ作成しました．
+以下の機能をもったスライダーを， jQuery と Vue.js を用いて 2 つ作成しました．
 
 **スライダーの機能一覧**
 - ナビゲーションボタン (前後のスライドに移動させる)
